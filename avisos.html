@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avisos Parroquiales - Nuestra Señora de Belén</title>
+    <style>
+        /* PALETA DE COLORES */
+        :root {
+            --cafe-oscuro: #5c4033;
+            --cafe-principal: #8b5a2b;
+            --cafe-claro: #d7c4b7;
+            --rosa-suave: #f7ebe8;
+            --rosa-acento: #e8b4b8;
+            --texto-oscuro: #3d2b1f;
+            --blanco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Georgia, serif;
+        }
+
+        body {
+            background-color: var(--rosa-suave);
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ENCABEZADO Y NAVEGACIÓN */
+        header {
+            background-color: var(--cafe-oscuro);
+            color: var(--blanco);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--rosa-acento);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--blanco);
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            color: var(--rosa-acento);
+        }
+
+        /* ESTADO ACTIVO */
+        .nav-links a.active {
+            color: var(--rosa-acento);
+            font-weight: bold;
+            border-bottom: 2px solid var(--rosa-acento);
+        }
+
+        /* BOTÓN HAMBURGUESA */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--blanco);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        .container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--cafe-oscuro);
+            margin-bottom: 2.5rem;
+            font-size: 2.2rem;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--rosa-acento);
+            margin: 0.5rem auto 0;
+        }
+
+        /* TARJETAS DE AVISOS */
+        .announcements-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .announcement-card {
+            background: var(--blanco);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--cafe-principal);
+            position: relative;
+        }
+
+        .announcement-card.important {
+            border-left-color: #d9534f;
+        }
+
+        .badge-important {
+            background-color: #d9534f;
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .announcement-date {
+            font-size: 0.85rem;
+            color: var(--cafe-principal);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .announcement-card h3 {
+            color: var(--cafe-oscuro);
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            background-color: var(--cafe-oscuro);
+            color: var(--blanco);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* REGLAS MÓVILES */
+        @media (max-width: 768px) {
+            .menu-toggle { 
+                display: block; 
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--cafe-oscuro);
+                padding: 1rem 0;
+                gap: 0;
+                z-index: 9999;
+                box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.show {
+                display: flex !important;
+            }
+
+            .nav-links li {
+                text-align: center;
+                padding: 0.8rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-links a.active {
+                border-bottom: none;
+                background-color: rgba(232, 180, 184, 0.15);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Nuestra Señora de Belén</div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="patrona.html">Nuestra Patrona</a></li>
+                <li><a href="horarios.html">Horarios</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="avisos.html" class="active">Avisos</a></li>
+                <li><a href="ubicacion.html">Ubicación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="section-title">Avisos Parroquiales</h1>
+
+        <div class="announcements-grid">
+            
+            <!-- Aviso Importante/Urgente -->
+            <article class="announcement-card important">
+                <span class="badge-important">IMPORTANTE</span>
+                <div class="announcement-date">Publicado: Esta semana</div>
+                <h3>Inscripciones para Catequesis Infantil</h3>
+                <p>Abiertas las inscripciones para la Primera Comunión y Confirmación. Acudir al despacho parroquial con la fe de bautismo de lunes a viernes en horario de oficina.</p>
+            </article>
+
+            <!-- Aviso Normal -->
+            <article class="announcement-card">
+                <div class="announcement-date">Publicado: Hace unos días</div>
+                <h3>Junta de Pastoral de Enfermos</h3>
+                <p>Se convoca a todos los ministros extraordinarios de la comunión a la reunión mensual el próximo jueves a las 6:00 PM en el salón parroquial.</p>
+            </article>
+
+            <article class="announcement-card">
+                <div class="announcement-date">Publicado: Reciente</div>
+                <h3>Intenciones de Misa comunitarias</h3>
+                <p>Si deseas anotar intenciones para las misas del fin de semana, favor de registrarlas en la sacristía 15 minutos antes de cada celebración.</p>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Parroquia Nuestra Señora de Belén</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

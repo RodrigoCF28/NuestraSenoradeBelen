@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parroquia Nuestra Señora de Belén</title>
     <style>
-        /* PALETA DE COLORES: Café claro, Arena y Rosado suave */
+        /* PALETA DE COLORES */
         :root {
             --cafe-oscuro: #5c4033;
             --cafe-principal: #8b5a2b;
@@ -34,7 +34,7 @@
             color: inherit;
         }
 
-        /* Encabezado */
+        /* ENCABEZADO Y NAVEGACIÓN */
         header {
             background-color: var(--cafe-oscuro);
             color: var(--blanco);
@@ -51,10 +51,11 @@
             align-items: center;
             max-width: 1100px;
             margin: 0 auto;
+            position: relative;
         }
 
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: bold;
             color: var(--rosa-acento);
         }
@@ -66,14 +67,35 @@
         }
 
         .nav-links a {
+            color: var(--blanco);
+            font-weight: 500;
             transition: color 0.3s;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
         }
 
         .nav-links a:hover {
             color: var(--rosa-acento);
         }
 
-        /* Banner Principal / Hero */
+        /* ESTADO ACTIVO (Muestra la vista en la que está el usuario) */
+        .nav-links a.active {
+            color: var(--rosa-acento);
+            font-weight: bold;
+            border-bottom: 2px solid var(--rosa-acento);
+        }
+
+        /* BOTÓN HAMBURGUESA */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--blanco);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* BANNER PRINCIPAL / HERO */
         .hero {
             background: linear-gradient(rgba(92, 64, 51, 0.65), rgba(92, 64, 51, 0.65)), 
                         url('imagenes/exterior.jpg') center/cover no-repeat;
@@ -121,7 +143,7 @@
             margin: 0.5rem auto 0;
         }
 
-        /* Tarjetas de fotos de la iglesia */
+        /* TARJETAS DE FOTOS */
         .church-tour {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -157,7 +179,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Horarios */
+        /* HORARIOS */
         .schedules-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -181,7 +203,7 @@
         .card ul { list-style: none; }
         .card li { padding: 0.5rem 0; border-bottom: 1px solid var(--rosa-suave); }
 
-        /* Pie de página */
+        /* PIE DE PÁGINA */
         footer {
             background-color: var(--cafe-oscuro);
             color: var(--blanco);
@@ -189,84 +211,63 @@
             padding: 2rem;
             margin-top: 3rem;
         }
-        /* Estilos del botón hamburguesa (Oculto en computadoras) */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--blanco);
-    font-size: 1.8rem;
-    cursor: pointer;
-    padding: 0.2rem 0.5rem;
-}
 
-/* Reglas para pantallas pequeñas (Celulares y tabletas) */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block; /* Muestra el botón en móviles */
-    }
-
-    .nav-links {
-        display: none; /* Oculto por defecto */
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--cafe-oscuro);
-        padding: 1rem 0;
-        gap: 0;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    .nav-links.active {
-        display: flex; /* Se muestra al presionar el botón */
-    }
-
-    .nav-links li {
-        text-align: center;
-        padding: 0.8rem 0;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-}
-
+        /* REGLAS MÓVILES */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
+            .menu-toggle { 
+                display: block; 
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--cafe-oscuro);
+                padding: 1rem 0;
+                gap: 0;
+                z-index: 9999;
+                box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.show {
+                display: flex !important;
+            }
+
+            .nav-links li {
+                text-align: center;
+                padding: 0.8rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-links a.active {
+                border-bottom: none;
+                background-color: rgba(232, 180, 184, 0.15);
+            }
+
             .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- UN SOLO HEADER -->
     <header>
         <nav>
             <div class="logo">Nuestra Señora de Belén</div>
-            <!-- Botón hamburguesa para móviles -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-        ☰
-    </button>
-
-    <ul class="nav-links" id="navLinks">
-        <!-- Tus enlaces del menú van aquí -->
-    </ul>
-<ul class="nav-links">
-    <li><a href="index.html" style="color: var(--rosa-acento);">Inicio</a></li>
-    <li><a href="patrona.html">Nuestra Patrona</a></li>
-    <li><a href="horarios.html">Horarios</a></li>
-    <li><a href="eventos.html">Eventos</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-    <li><a href="ubicacion.html">Ubicación</a></li>
-</ul>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="patrona.html">Nuestra Patrona</a></li>
+                <li><a href="horarios.html">Horarios</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="avisos.html">Avisos</a></li>
+                <li><a href="ubicacion.html">Ubicación</a></li>
+            </ul>
         </nav>
     </header>
-        <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>    
 
     <section class="hero">
         <h1>Parroquia Nuestra Señora de Belén</h1>
@@ -320,6 +321,16 @@
     <footer>
         <p>&copy; Parroquia Nuestra Señora de Belén</p>
     </footer>
+
+    <!-- UN SOLO SCRIPT AL FINAL -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('show');
+        });
+    </script>
 
 </body>
 </html>

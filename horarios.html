@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horarios - Parroquia Nuestra Señora de Belén</title>
+    <style>
+        :root {
+            --cafe-oscuro: #5c4033;
+            --cafe-principal: #8b5a2b;
+            --cafe-claro: #d7c4b7;
+            --rosa-suave: #f7ebe8;
+            --rosa-acento: #e8b4b8;
+            --texto-oscuro: #3d2b1f;
+            --blanco: #ffffff;
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Georgia, serif; }
+        body { background-color: var(--rosa-suave); color: var(--texto-oscuro); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        header { background-color: var(--cafe-oscuro); color: var(--blanco); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
+        .logo { font-size: 1.4rem; font-weight: bold; color: var(--rosa-acento); }
+        .nav-links { display: flex; list-style: none; gap: 1.5rem; }
+        .nav-links a:hover { color: var(--rosa-acento); }
+
+        .container { max-width: 1000px; margin: 3rem auto; padding: 0 1.5rem; }
+        .section-title { text-align: center; color: var(--cafe-oscuro); margin-bottom: 2.5rem; font-size: 2.2rem; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background-color: var(--rosa-acento); margin: 0.5rem auto 0; }
+
+        .schedules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .card { background: var(--blanco); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 5px solid var(--cafe-principal); }
+        .card h3 { color: var(--cafe-oscuro); margin-bottom: 1rem; border-bottom: 2px solid var(--rosa-suave); padding-bottom: 0.5rem; }
+        .card ul { list-style: none; }
+        .card li { padding: 0.6rem 0; border-bottom: 1px dashed var(--cafe-claro); }
+        .card li:last-child { border-bottom: none; }
+
+        footer { background-color: var(--cafe-oscuro); color: var(--blanco); text-align: center; padding: 2rem; margin-top: 4rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Nuestra Señora de Belén</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="patrona.html">Nuestra Patrona</a></li>
+                <li><a href="horarios.html" style="color: var(--rosa-acento);">Horarios</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="section-title">Horarios de Celebra­cio­nes y Aten­ción</h1>
+
+        <div class="schedules-grid">
+            <div class="card">
+                <h3>Misas Diarias</h3>
+                <ul>
+                    <li><strong>Lunes a Viernes:</strong> 7:00 AM y 7:00 PM</li>
+                    <li><strong>Sábados:</strong> 8:00 AM</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Misas Dominicales</h3>
+                <ul>
+                    <li><strong>Mañana:</strong> 8:00 AM, 10:00 AM y 12:00 PM</li>
+                    <li><strong>Tarde:</strong> 6:00 PM y 8:00 PM</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Sacramentos y Despacho</h3>
+                <ul>
+                    <li><strong>Confesiones:</strong> Jueves y Viernes (5:00 PM - 6:30 PM)</li>
+                    <li><strong>Oficina Parroquial:</strong> Mar a Sáb (9:00 AM - 1:00 PM)</li>
+                    <li><strong>Bautismos:</strong> Sábados 11:00 AM (Previa cita)</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Parroquia Nuestra Señora de Belén</p>
+    </footer>
+
+</body>
+</html>

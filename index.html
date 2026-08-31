@@ -189,6 +189,46 @@
             padding: 2rem;
             margin-top: 3rem;
         }
+        /* Estilos del botón hamburguesa (Oculto en computadoras) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--blanco);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+}
+
+/* Reglas para pantallas pequeñas (Celulares y tabletas) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Muestra el botón en móviles */
+    }
+
+    .nav-links {
+        display: none; /* Oculto por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--cafe-oscuro);
+        padding: 1rem 0;
+        gap: 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.active {
+        display: flex; /* Se muestra al presionar el botón */
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+}
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -201,6 +241,14 @@
     <header>
         <nav>
             <div class="logo">Nuestra Señora de Belén</div>
+            <!-- Botón hamburguesa para móviles -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        ☰
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+        <!-- Tus enlaces del menú van aquí -->
+    </ul>
 <ul class="nav-links">
     <li><a href="index.html" style="color: var(--rosa-acento);">Inicio</a></li>
     <li><a href="patrona.html">Nuestra Patrona</a></li>
@@ -211,6 +259,14 @@
 </ul>
         </nav>
     </header>
+        <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>    
 
     <section class="hero">
         <h1>Parroquia Nuestra Señora de Belén</h1>

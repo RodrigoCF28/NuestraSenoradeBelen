@@ -1,1 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Patrona - Virgen de Belén</title>
+    <style>
+        :root {
+            --cafe-oscuro: #5c4033;
+            --cafe-principal: #8b5a2b;
+            --cafe-claro: #d7c4b7;
+            --rosa-suave: #f7ebe8;
+            --rosa-acento: #e8b4b8;
+            --texto-oscuro: #3d2b1f;
+            --blanco: #ffffff;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Georgia, serif;
+        }
+
+        body {
+            background-color: var(--rosa-suave);
+            color: var(--texto-oscuro);
+            line-height: 1.8;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        header {
+            background-color: var(--cafe-oscuro);
+            color: var(--blanco);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .logo { font-size: 1.4rem; font-weight: bold; color: var(--rosa-acento); }
+        .nav-links { display: flex; list-style: none; gap: 1.5rem; }
+        .nav-links a:hover { color: var(--rosa-acento); }
+
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .title {
+            text-align: center;
+            color: var(--cafe-oscuro);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--cafe-principal);
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        /* ESTILOS DEL CARRUSEL EN JS */
+        .carousel-container {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(92, 64, 51, 0.2);
+            border: 4px solid var(--blanco);
+        }
+
+        .carousel-slide {
+            display: none;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+
+        /* Animación suave de cambio */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.2s;
+        }
+
+        @keyframes fade {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+
+        /* Botones Anterior / Siguiente */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 12px 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.3s;
+            border-radius: 0 3px 3px 0;
+            background-color: rgba(92, 64, 51, 0.5);
+            user-select: none;
+        }
+
+        .next { right: 0; border-radius: 3px 0 0 3px; }
+        .prev:hover, .next:hover { background-color: var(--cafe-oscuro); }
+
+        /* Puntos indicadores */
+        .dots-container {
+            text-align: center;
+            margin-top: -1.5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 13px;
+            width: 13px;
+            margin: 0 5px;
+            background-color: var(--cafe-claro);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.4s;
+        }
+
+        .active, .dot:hover {
+            background-color: var(--cafe-principal);
+        }
+
+        /* Sección Historia */
+        .history-box {
+            background: var(--blanco);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--rosa-acento);
+        }
+
+        .history-box h3 {
+            color: var(--cafe-oscuro);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .history-box p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        footer {
+            background-color: var(--cafe-oscuro);
+            color: var(--blanco);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Nuestra Señora de Belén</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="patrona.html" style="color: var(--rosa-acento);">Nuestra Patrona</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="title">Nuestra Santísima Patrona</h1>
+        <p class="subtitle">Virgen María, Madre de Belén y protectora de nuestra comunidad</p>
+
+        <div class="carousel-container">
+            <div class="carousel-slide fade">
+                <img src="imagenes/virgen.jpg" alt="Virgen de Belén 1">
+            </div>
+            <div class="carousel-slide fade">
+                <img src="imagenes/virgen2.jpg" alt="Virgen de Belén 2">
+            </div>
+            <div class="carousel-slide fade">
+                <img src="imagenes/virgen3.jpg" alt="Virgen de Belén 3">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <article class="history-box">
+            <h3>Historia y Devoción</h3>
+            <p>
+                La advocación de Nuestra Señora de Belén evoca el misterio gozoso del Nacimiento de Jesús. 
+                Nuestra imagen patronal ha acompañado a los fieles de esta comunidad a lo largo de las generaciones, 
+                siendo un faro de esperanza, consuelo y unión fraternal.
+            </p>
+            <p>
+                Cada año, en sus fiestas patronales, la comunidad se congrega con profundo fervor para dar gracias 
+                por su intercesión, encomendar a las familias y renovar nuestro compromiso de fe y servicio a los más necesitados.
+            </p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; Parroquia Nuestra Señora de Belén</p>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Cambio manual (Botones)
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("carousel-slide");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+
+        // Cambio automático de fotos cada 4 segundos
+        setInterval(function() {
+            plusSlides(1);
+        }, 4000);
+    </script>
+</body>
+</html>

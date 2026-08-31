@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - Parroquia Nuestra Señora de Belén</title>
+    <style>
+        :root {
+            --cafe-oscuro: #5c4033;
+            --cafe-principal: #8b5a2b;
+            --cafe-claro: #d7c4b7;
+            --rosa-suave: #f7ebe8;
+            --rosa-acento: #e8b4b8;
+            --texto-oscuro: #3d2b1f;
+            --blanco: #ffffff;
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Georgia, serif; }
+        body { background-color: var(--rosa-suave); color: var(--texto-oscuro); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        header { background-color: var(--cafe-oscuro); color: var(--blanco); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
+        .logo { font-size: 1.4rem; font-weight: bold; color: var(--rosa-acento); }
+        .nav-links { display: flex; list-style: none; gap: 1.5rem; }
+        .nav-links a:hover { color: var(--rosa-acento); }
+
+        .container { max-width: 900px; margin: 3rem auto; padding: 0 1.5rem; }
+        .section-title { text-align: center; color: var(--cafe-oscuro); margin-bottom: 2.5rem; font-size: 2.2rem; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background-color: var(--rosa-acento); margin: 0.5rem auto 0; }
+
+        .events-list { display: flex; flex-direction: column; gap: 1.5rem; }
+        .event-card { display: flex; background: var(--blanco); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .event-date { background-color: var(--cafe-principal); color: var(--blanco); padding: 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; min-width: 120px; text-align: center; }
+        .event-date .day { font-size: 1.8rem; font-weight: bold; color: var(--rosa-acento); }
+        .event-info { padding: 1.5rem; }
+        .event-info h3 { color: var(--cafe-oscuro); margin-bottom: 0.5rem; }
+
+        footer { background-color: var(--cafe-oscuro); color: var(--blanco); text-align: center; padding: 2rem; margin-top: 4rem; }
+
+        @media (max-width: 600px) {
+            .event-card { flex-direction: column; }
+            .event-date { min-width: 100%; padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Nuestra Señora de Belén</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="patrona.html">Nuestra Patrona</a></li>
+                <li><a href="horarios.html">Horarios</a></li>
+                <li><a href="eventos.html" style="color: var(--rosa-acento);">Eventos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="section-title">Próxi­mos Eventos y Noti­cias</h1>
+
+        <div class="events-list">
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">15</span>
+                    <span>DICIEMBRE</span>
+                </div>
+                <div class="event-info">
+                    <h3>Inicio de las Posadas Parroquiales</h3>
+                    <p>Acompañános a vivir las tradicionales posadas comunitarias a partir de las 6:00 PM en el atrio. Trae a tu familia.</p>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">24</span>
+                    <span>DICIEMBRE</span>
+                </div>
+                <div class="event-info">
+                    <h3>Misa Solemne de Nochebuena</h3>
+                    <p>Celebremos juntos el nacimiento del Niño Jesús en nuestra Misa de Gallo. Hora: 8:00 PM.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Parroquia Nuestra Señora de Belén</p>
+    </footer>
+
+</body>
+</html>

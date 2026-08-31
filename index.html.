@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parroquia Nuestra Señora de Belén</title>
+    <style>
+        /* Estilos Generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Encabezado y Navegación */
+        header {
+            background-color: #1a365d;
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a:hover {
+            color: #d69e2e;
+            transition: 0.3s;
+        }
+
+        /* Hero / Bienvenida */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.7), rgba(26, 54, 93, 0.7)), 
+                        url('https://images.unsplash.com/photo-1548625149-fc4a29cf7092?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #1a365d;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #d69e2e;
+            margin: 0.5rem auto 0;
+        }
+
+        /* Sección de Horarios */
+        .schedules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid #1a365d;
+        }
+
+        .card h3 {
+            color: #1a365d;
+            margin-bottom: 1rem;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .card li:last-child {
+            border-bottom: none;
+        }
+
+        /* Sección de Eventos */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .event-date {
+            background-color: #d69e2e;
+            color: white;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .event-content {
+            padding: 1.5rem;
+        }
+
+        .event-content h3 {
+            color: #1a365d;
+            margin: 0.5rem 0;
+        }
+
+        /* Formulario de Contacto */
+        .contact-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .btn-submit {
+            background-color: #1a365d;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #2b6cb0;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #1a365d;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Adaptabilidad para celulares */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Nuestra Señora de Belén</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#horarios">Horarios</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h1>Parroquia Nuestra Señora de Belén</h1>
+        <p>Un espacio de fe, esperanza y comunidad para todos.</p>
+    </section>
+
+    <main class="container">
+        <section id="horarios">
+            <h2 class="section-title">Horarios de Misa</h2>
+            <div class="schedules-grid">
+                <div class="card">
+                    <h3>Misas Diarias</h3>
+                    <ul>
+                        <li><strong>Lunes a Viernes:</strong> 7:00 AM y 7:00 PM</li>
+                        <li><strong>Sábados:</strong> 8:00 AM</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Misas Dominicales</h3>
+                    <ul>
+                        <li><strong>Mañana:</strong> 8:00 AM, 10:00 AM, 12:00 PM</li>
+                        <li><strong>Tarde:</strong> 6:00 PM y 8:00 PM</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Confesiones y Atención</h3>
+                    <ul>
+                        <li><strong>Confesiones:</strong> Jueves y Viernes (5:00 PM - 6:30 PM)</li>
+                        <li><strong>Oficina Parroquial:</strong> Mar - Sáb (9:00 AM - 1:00 PM)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="eventos">
+            <h2 class="section-title">Próximos Eventos</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">15 de Diciembre</div>
+                    <div class="event-content">
+                        <h3>Inicio de las Posadas</h3>
+                        <p>Acompañános en el inicio de los festejos navideños a partir de las 6:00 PM en el patio parroquial.</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">24 de Diciembre</div>
+                    <div class="event-content">
+                        <h3>Misa de Nochebuena</h3>
+                        <p>Celebremos juntos el nacimiento de Jesús. La misa solemne será a las 8:00 PM.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2 class="section-title">Contacto y Consultas</h2>
+            <div class="contact-section">
+                <form action="https://formspree.io/f/tu-codigo-aqui" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje o Intención de Misa</label>
+                        <textarea id="mensaje" name="mensaje" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Parroquia Nuestra Señora de Belén - Todos los derechos reservados.</p>
+        <p>Dirección de la Iglesia #123, Ciudad, País</p>
+    </footer>
+
+</body>
+</html>

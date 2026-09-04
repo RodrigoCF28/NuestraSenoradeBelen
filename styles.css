@@ -432,10 +432,19 @@ nav {
 /* ==========================================
    VISTA: PATRONA (CARRUSEL Y TEXTO)
    ========================================== */
+.subtitle {
+    text-align: center;
+    color: var(--cafe-principal);
+    font-size: 1.15rem;
+    margin-top: -1.2rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
 .carousel-container {
     position: relative;
     max-width: 800px;
-    margin: 0 auto 2.5rem;
+    margin: 0 auto 1rem;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 6px 18px rgba(0,0,0,0.15);
@@ -447,8 +456,17 @@ nav {
 
 .carousel-slide img {
     width: 100%;
-    height: 400px;
+    height: 420px;
     object-fit: cover;
+}
+
+.fade {
+    animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; } 
+    to { opacity: 1; }
 }
 
 .carousel-prev, .carousel-next {
@@ -456,34 +474,70 @@ nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    padding: 1rem;
+    padding: 0.8rem 1.2rem;
     color: white;
     font-weight: bold;
     font-size: 1.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(62, 39, 35, 0.6);
     border: none;
+    border-radius: 4px;
     transition: background-color 0.3s;
 }
 
-.carousel-next { right: 0; }
-.carousel-prev { left: 0; }
+.carousel-next { right: 10px; }
+.carousel-prev { left: 10px; }
 
 .carousel-prev:hover, .carousel-next:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: var(--cafe-oscuro);
+}
+
+.dots-container {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: var(--cafe-claro);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.dot.active, .dot:hover {
+    background-color: var(--dorado-acento);
 }
 
 .history-content {
     background: var(--blanco);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     line-height: 1.8;
+    border-left: 6px solid var(--cafe-principal);
+}
+
+.history-content h3 {
+    color: var(--cafe-oscuro);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
 }
 
 .history-content p {
     margin-bottom: 1.2rem;
+    font-size: 1.05rem;
 }
 
+.history-highlight {
+    font-weight: bold;
+    color: var(--cafe-oscuro);
+    text-align: center;
+    font-size: 1.2rem;
+    padding-top: 0.5rem;
+}
 /* ==========================================
    VISTA: UBICACIÓN Y MAPAS
    ========================================== */

@@ -30,6 +30,16 @@ a {
     text-decoration: none;
     color: inherit;
 }
+.contact-item a {
+    color: var(--cafe-oscuro);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--rosa-acento);
+    text-decoration: underline;
+}
 
 /* ==========================================
    HEADER Y NAVBAR

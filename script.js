@@ -1,5 +1,5 @@
 /* ==========================================
-   1. MENÚ HAMBURGUESA (MÓVIL)
+   1. NAVEGACIÓN Y MENÚ MÓVIL
    ========================================== */
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
@@ -10,30 +10,40 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.toggle('show');
         });
     }
+
+    /* ==========================================
+       2. BUSCADOR EN TIEMPO REAL (CENTROS PASTORALES)
+       ========================================== */
+    const searchInput = document.getElementById('cpSearch');
+    if (searchInput) {
+        searchInput.addEventListener('keyup', function(e) {
+            const term = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.cp-card');
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(term)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    }
 });
 
 /* ==========================================
-   2. CARRUSEL DE IMÁGENES (PÁGINA PATRONA)
+   3. CARRUSEL (PATRONA)
    ========================================== */
 let slideIndex = 1;
 
-// Solo ejecuta el carrusel si existen slides en el DOM actual
 if (document.getElementsByClassName("carousel-slide").length > 0) {
     showSlides(slideIndex);
-
-    // Cambio automático cada 4 segundos
-    setInterval(function() {
-        plusSlides(1);
-    }, 4000);
+    setInterval(function() { plusSlides(1); }, 4000);
 }
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
+function plusSlides(n) { showSlides(slideIndex += n); }
+function currentSlide(n) { showSlides(slideIndex = n); }
 
 function showSlides(n) {
     let i;

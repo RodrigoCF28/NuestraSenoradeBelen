@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestra Patrona - Virgen de Belén</title>
     <link rel="stylesheet" href="styles.css">
-    
 </head>
 <body>
 
-<header>
+    <header>
         <nav>
             <a href="index.html" class="logo-link">⛪ Nuestra Señora de Belén</a>
             <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰ Menú</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="patrona.html">Nuestra Patrona</a></li>
+                <li><a href="patrona.html" class="active">Nuestra Patrona</a></li>
                 <li><a href="centros-pastorales.html">Centros Pastorales</a></li>
                 <li><a href="horarios.html">Horarios</a></li>
                 <li><a href="avisos.html">Avisos y Eventos</a></li>
@@ -25,7 +24,7 @@
     </header>
 
     <main class="container">
-        <h1 class="title">Nuestra Santísima Patrona</h1>
+        <h1 class="section-title">Nuestra Santísima Patrona</h1>
         <p class="subtitle">Virgen María, Madre de Belén y protectora de nuestra comunidad</p>
 
         <div class="carousel-container">
@@ -39,8 +38,8 @@
                 <img src="imagenes/virgen3.jpg" alt="Virgen de Belén 3">
             </div>
 
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <button class="carousel-prev" onclick="plusSlides(-1)">&#10094;</button>
+            <button class="carousel-next" onclick="plusSlides(1)">&#10095;</button>
         </div>
 
         <div class="dots-container">
@@ -49,7 +48,7 @@
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
 
-        <article class="history-box">
+        <article class="history-content">
             <h3>Historia y Devoción</h3>
             <p>
                 La advocación de Nuestra Señora de Belén evoca el misterio gozoso del Nacimiento de Jesús. 
@@ -60,13 +59,14 @@
                 Cada año, en sus fiestas patronales, la comunidad se congrega con profundo fervor para dar gracias 
                 por su intercesión, encomendar a las familias y renovar nuestro compromiso de fe y servicio a los más necesitados.
             </p>
-            <p> ¡Nuestra Señoara de Belén, ayudanos a hacer el bien!</p>
+            <p class="history-highlight">¡Nuestra Señora de Belén, ayúdanos a hacer el bien!</p>
         </article>
     </main>
 
     <footer>
         <p>&copy; Parroquia Nuestra Señora de Belén</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

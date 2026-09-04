@@ -3,41 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avisos Parroquiales - Nuestra Señora de Belén</title>
+    <title>Avisos y Eventos - Nuestra Señora de Belén</title>
     <link rel="stylesheet" href="styles.css">
-   
 </head>
 <body>
 
     <header>
         <nav>
-            <div class="logo">Nuestra Señora de Belén</div>
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+            <a href="index.html" class="logo-link">⛪ Nuestra Señora de Belén</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰ Menú</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="patrona.html">Nuestra Patrona</a></li>
+                <li><a href="centros-pastorales.html">Centros Pastorales</a></li>
                 <li><a href="horarios.html">Horarios</a></li>
-                <li><a href="eventos.html">Eventos</a></li>
-                <li><a href="avisos.html" class="active">Avisos</a></li>
+                <li><a href="avisos.html" class="active">Avisos y Eventos</a></li>
                 <li><a href="ubicacion.html">Ubicación</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="container">
-        <h1 class="section-title">Avisos Parroquiales</h1>
+        
+        <!-- SECCIÓN DE EVENTOS DESTACADOS -->
+        <h1 class="section-title">Próximos Eventos</h1>
+        <div class="events-list" style="margin-bottom: 4rem;">
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">15</span>
+                    <span>DICIEMBRE</span>
+                </div>
+                <div class="event-info">
+                    <h3>Inicio de las Posadas Parroquiales</h3>
+                    <p>Acompáñanos a vivir las tradicionales posadas comunitarias a partir de las 6:00 PM en el atrio. Trae a tu familia.</p>
+                </div>
+            </div>
 
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="day">24</span>
+                    <span>DICIEMBRE</span>
+                </div>
+                <div class="event-info">
+                    <h3>Misa Solemne de Nochebuena</h3>
+                    <p>Celebremos juntos el nacimiento del Niño Jesús en nuestra Misa de Gallo. Hora: 8:00 PM.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN DE AVISOS PARROQUIALES -->
+        <h2 class="section-title">Avisos Parroquiales</h2>
         <div class="announcements-grid">
-            
-            <!-- Aviso Importante/Urgente -->
             <article class="announcement-card important">
                 <span class="badge-important">IMPORTANTE</span>
                 <div class="announcement-date">Publicado: Esta semana</div>
                 <h3>Inscripciones para Catequesis Infantil</h3>
-                <p>Abiertas las inscripciones para la Primera Comunión y Confirmación. Acudir al despacho parroquial con la fe de bautismo de lunes a viernes en horario de oficina.</p>
+                <p>Abiertas las inscripciones para la Primera Comunión y Confirmación. Acudir al despacho parroquial con la fe de bautismo de martes a viernes en horario de oficina.</p>
             </article>
 
-            <!-- Aviso Normal -->
             <article class="announcement-card">
                 <div class="announcement-date">Publicado: Hace unos días</div>
                 <h3>Junta de Pastoral de Enfermos</h3>
@@ -46,16 +69,17 @@
 
             <article class="announcement-card">
                 <div class="announcement-date">Publicado: Reciente</div>
-                <h3>Intenciones de Misa comunitarias</h3>
+                <h3>Intenciones de Misa Comunitarias</h3>
                 <p>Si deseas anotar intenciones para las misas del fin de semana, favor de registrarlas en la sacristía 15 minutos antes de cada celebración.</p>
             </article>
-
         </div>
+
     </main>
 
     <footer>
         <p>&copy; Parroquia Nuestra Señora de Belén</p>
     </footer>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>

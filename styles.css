@@ -1068,3 +1068,39 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+/* ==========================================
+   BOTÓN SOCIAL DE FACEBOOK INTERACTIVO
+   ========================================== */
+.facebook-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background-color: #1877f2; /* Azul oficial de Facebook */
+    color: #ffffff !important;
+    padding: 0.75rem 1.25rem;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(24, 119, 242, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    margin-top: 0.4rem;
+}
+
+.facebook-btn:hover {
+    background-color: #145dbf;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(24, 119, 242, 0.45);
+    text-decoration: none !important;
+}
+
+.facebook-icon {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.facebook-btn:hover .facebook-icon {
+    transform: scale(1.15);
+}

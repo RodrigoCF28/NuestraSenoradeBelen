@@ -5,14 +5,14 @@
     <meta name="google-site-verification" content="6-Bo4VOtSaKVBHqyHM3S2Z3fgsiJe93w-4jhq6I8YD8" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- Título visible en los resultados de Google -->
-<title>Parroquia Nuestra Señora de Belén - Caucel, Yucatán</title>
+    <!-- Título visible en los resultados de Google -->
+    <title>Parroquia Nuestra Señora de Belén - Caucel, Yucatán</title>
 
-<!-- Descripción corta que muestra Google debajo del enlace -->
-<meta name="description" content="Sitio oficial de la Parroquia Nuestra Señora de Belén en Caucel. Consulta horarios de misas, Hora Santa, avisos y centros pastorales.">
+    <!-- Descripción corta que muestra Google debajo del enlace -->
+    <meta name="description" content="Sitio oficial de la Parroquia Nuestra Señora de Belén en Caucel. Consulta horarios de misas, Hora Santa, avisos y centros pastorales.">
 
-<!-- Palabras clave -->
-<meta name="keywords" content="Parroquia de Belén, Iglesia Caucel, Horarios de Misa Caucel, Hora Santa Caucel">
+    <!-- Palabras clave -->
+    <meta name="keywords" content="Parroquia de Belén, Iglesia Caucel, Horarios de Misa Caucel, Hora Santa Caucel">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -32,70 +32,122 @@
         </nav>
     </header>
 
+    <!-- HERO REFORZADO CON BOTONES INTERACTIVOS -->
     <section class="hero">
-        <h1>Parroquia Nuestra Señora de Belén</h1>
-        <p>Un hogar de oración, fe y comunidad con los brazos abiertos.</p>
+        <div class="hero-content">
+            <h1>Parroquia Nuestra Señora de Belén</h1>
+            <p>Un hogar de oración, fe y comunidad con los brazos abiertos.</p>
+            <div class="hero-buttons">
+                <a href="#video-seccion" class="btn btn-primary">🎥 Ver Video</a>
+                <a href="#horarios" class="btn btn-secondary">🕒 Horarios de Misa</a>
+            </div>
+        </div>
     </section>
 
     <main class="container">
         
-        <section>
-            <h2 class="section-title">Nuestra Parroquia</h2>
+        <!-- SECCIÓN RECORRIDO Y GALERÍA FOTOGRÁFICA INTERACTIVA -->
+        <section class="reveal-section">
+            <h2 class="section-title">Nuestra Parroquia y Patrona</h2>
+            <p class="section-subtitle">Haz clic en las imágenes para ampliarlas y conocer cada rincón sagrado</p>
+            
             <div class="church-tour">
-                <div class="tour-card">
+                <div class="tour-card zoom-card" data-lightbox="imagenes/frontal.jpg" data-caption="Fachada Principal - Puertas abiertas para recibir a toda la comunidad.">
                     <img src="imagenes/frontal.jpg" alt="Fachada Frontal">
                     <div class="tour-info">
                         <h3>Fachada Principal</h3>
                         <p>Puertas abiertas para recibir a toda la comunidad.</p>
                     </div>
                 </div>
-                <div class="tour-card">
+                <div class="tour-card zoom-card" data-lightbox="imagenes/interior.jpg" data-caption="Nave Central - Un espacio sagrado para el encuentro y el recogimiento.">
                     <img src="imagenes/interior.jpg" alt="Interior del templo">
                     <div class="tour-info">
                         <h3>Nave Central</h3>
                         <p>Un espacio sagrado para el encuentro y el recogimiento.</p>
                     </div>
                 </div>
+                <div class="tour-card zoom-card" data-lightbox="imagenes/rostro.jpg" data-caption="Rostro de la Santísima Virgen de Belén.">
+                    <img src="imagenes/rostro.jpg" alt="Rostro de la Virgen">
+                    <div class="tour-info">
+                        <h3>Rostro de nuestra Patrona</h3>
+                        <p>Mirada de ternura, protección y amor maternal.</p>
+                    </div>
+                </div>
+                <div class="tour-card zoom-card" data-lightbox="imagenes/virgen4.jpg" data-caption="Nuestra Señora de Belén en su altar.">
+                    <img src="imagenes/virgen4.jpg" alt="Imagen de la Virgen 4">
+                    <div class="tour-info">
+                        <h3>Nuestra Señora de Belén</h3>
+                        <p>Refugio espiritual para toda nuestra comunidad.</p>
+                    </div>
+                </div>
+                <div class="tour-card zoom-card" data-lightbox="imagenes/virgen5.jpg" data-caption="Altar y Veneración a la Virgen.">
+                    <img src="imagenes/virgen5.jpg" alt="Imagen de la Virgen 5">
+                    <div class="tour-info">
+                        <h3>Espacio de Veneración</h3>
+                        <p>Acompañando con devoción las intenciones del pueblo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE VIDEO INTERACTIVO -->
+        <section id="video-seccion" class="reveal-section video-container-section">
+            <h2 class="section-title">Conoce Nuestra Comunidad en Video</h2>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <video id="parroquiaVideo" poster="imagenes/frontal.jpg" preload="metadata">
+                        <source src="video1.mp4" type="video/mp4">
+                        Tu navegador no soporta reproducción de video HTML5.
+                    </video>
+                    <div class="video-overlay" id="videoOverlay">
+                        <button class="play-btn" id="playBtn" aria-label="Reproducir video">▶</button>
+                    </div>
+                </div>
+                <div class="video-controls-bar">
+                    <button id="togglePlayBtn">▶ / ❚❚</button>
+                    <button id="toggleMuteBtn">🔊</button>
+                    <button id="fullscreenBtn">⛶ Pantalla Completa</button>
+                </div>
             </div>
         </section>
 
         <!-- SECCIÓN DE CONTACTO DIRECTO -->
-     <!-- SECCIÓN DE CONTACTO DIRECTO -->
-<section class="contact-section">
-    <h2 class="section-title" style="margin-bottom:1rem;">Contacto y Atención Parroquial</h2>
-    <p style="text-align: center; color: var(--cafe-principal);">Información importante del despacho y medios de comunicación</p>
-    
-    <div class="contact-grid">
-        <div class="contact-item">
-            <h4>📞 Teléfono</h4>
-            <p><a href="tel:9994945518"><strong>9994-94-55-18</strong></a></p>
-        </div>
-        <div class="contact-item">
-            <h4>📘 Facebook Oficial</h4>
-            <p>
-                <a href="https://www.facebook.com/profile.php?id=100064894568289" target="_blank" rel="noopener noreferrer">
-                    Parroquia Nuestra Señora de Belen Caucel Pueblo
-                </a>
-            </p>
-        </div>
-        <div class="contact-item">
-            <h4>✉️ Correo Electrónico</h4>
-            <p><a href="mailto:parroquia-caucel@outlook.com">parroquia-caucel@outlook.com</a></p>
-        </div>
-        
-        <div class="contact-item full-width">
-            <h4>🕒 Horario de Oficina</h4>
-            <p><strong>De Martes a Sábado:</strong> 9:00 AM - 1:00 PM y 5:00 PM - 8:00 PM</p>
-            <p><strong>Domingos:</strong> 9:00 AM - 11:50 AM</p>
-        </div>
-    </div>
+        <section class="contact-section reveal-section">
+            <h2 class="section-title" style="margin-bottom:1rem;">Contacto y Atención Parroquial</h2>
+            <p style="text-align: center; color: var(--cafe-principal);">Información importante del despacho y medios de comunicación</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h4>📞 Teléfono</h4>
+                    <p><a href="tel:9994945518"><strong>9994-94-55-18</strong></a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>📘 Facebook Oficial</h4>
+                    <p>
+                        <a href="https://www.facebook.com/profile.php?id=100064894568289" target="_blank" rel="noopener noreferrer">
+                            Parroquia Nuestra Señora de Belen Caucel Pueblo
+                        </a>
+                    </p>
+                </div>
+                <div class="contact-item">
+                    <h4>✉️ Correo Electrónico</h4>
+                    <p><a href="mailto:parroquia-caucel@outlook.com">parroquia-caucel@outlook.com</a></p>
+                </div>
+                
+                <div class="contact-item full-width">
+                    <h4>🕒 Horario de Oficina</h4>
+                    <p><strong>De Martes a Sábado:</strong> 9:00 AM - 1:00 PM y 5:00 PM - 8:00 PM</p>
+                    <p><strong>Domingos:</strong> 9:00 AM - 11:50 AM</p>
+                </div>
+            </div>
 
-    <div class="alert-lunes">
-        ⚠️ Importante: Los días lunes la iglesia permanece cerrada y el personal descansa.
-    </div>
-</section>
+            <div class="alert-lunes">
+                ⚠️ Importante: Los días lunes la iglesia permanece cerrada y el personal descansa.
+            </div>
+        </section>
 
-        <section id="horarios" style="margin-top: 3rem;">
+        <!-- SECCIÓN DE HORARIOS PRINCIPALES -->
+        <section id="horarios" class="reveal-section" style="margin-top: 3rem;">
             <h2 class="section-title">Horarios Principales</h2>
             <div class="schedules-grid">
                 <div class="card">
@@ -118,6 +170,13 @@
         </section>
 
     </main>
+
+    <!-- MODAL LIGHTBOX PARA AMPLIAR IMÁGENES -->
+    <div id="imageLightbox" class="lightbox-modal">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Imagen ampliada">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
 
     <footer>
         <p>&copy; Parroquia Nuestra Señora de Belén - Caucel, Yucatán</p>
